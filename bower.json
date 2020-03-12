@@ -1,0 +1,22 @@
+{
+  "name": "php_oe28_lap_sts",
+  "description": "",
+  "main": "",
+  "authors": [
+    "haiphung1 <haipmph05501@fpt.edu.vn>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/haiphung1/php_oe28_lab_sts",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "datatables.net": "^1.10.20",
+    "datatables.net-bs4": "^3.2.2"
+  }
+}
