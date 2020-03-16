@@ -10,17 +10,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <form action="#" class="sl-form">
+                    <form action="{{route('login')}}" method="post" class="sl-form">
+                        @csrf
                         <div class="form-group">
                             <label>{{ __('messages.username') }}</label>
-                            <input type="email" placeholder="{{ __('messages.username') }}" required>
+                            <input name="username" type="text" placeholder="{{ __('messages.username') }}" required>
                         </div>
                         <div class="form-group">
                             <label>{{ __('messages.password') }}</label>
-                            <input type="password" placeholder="{{ __('messages.password') }}" required>
+                            <input name="password" type="password" placeholder="{{ __('messages.password') }}" required>
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input">
+                            <input type="checkbox" class="form-check-input" name="remember">
                             <label class="form-check-label">{{ __('messages.remeber') }}</label>
                         </div>
                         <button class="btn btn-filled btn-round btn-login">{{ __('messages.login') }}</button>

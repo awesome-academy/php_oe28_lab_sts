@@ -14,8 +14,8 @@
                 <li class="has-menu-child current-menu-item">
                     <a href="javascript:void(0);">Username</a>
                     <ul class="sub-menu">
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="{{ url('login') }}">Logout</a></li>
+                        <li><a href="#">{{__('Profile')}}</a></li>
+                        <li><a href="{{ route('logout') }}">{{__('Logout')}}</a></li>
                     </ul>
                 </li>
             </ul>
