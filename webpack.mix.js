@@ -21,3 +21,7 @@ mix.styles([
 mix.scripts([
     'resources/assets/js/script.js'
 ], 'public/js/app.js');
+
+mix.js([
+    'resources/assets/js/table.js'
+], 'public/js/all.js');
