@@ -28,4 +28,11 @@ return [
     'home' => 'Trang chủ',
     'report' => 'Viết báo cáo',
     'submit' => 'Gửi',
+    'created_at' => 'Ngày tạo',
+    'list_course' => 'Danh sách khóa học',
+    'Admin' => 'Admin',
+    'login_admin' => 'Đăng nhập cho Admin',
+    'create_course' => 'Thêm khóa học',
+    'name_course' => 'Tên khóa học',
+    'cancel' => 'Trở về',
 ];
