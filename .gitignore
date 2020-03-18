@@ -12,6 +12,9 @@ npm-debug.log
 yarn-error.log
 /.idea
 package-lock.json
-/public/bower_components/*
-/public/css
+resources/js/app.js
+resources/js/bootstrap.js
+/public/bower_components
 /public/js
+/public/css
+/public/bower_components/*

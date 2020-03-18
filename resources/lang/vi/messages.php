@@ -35,4 +35,5 @@ return [
     'create_course' => 'Thêm khóa học',
     'name_course' => 'Tên khóa học',
     'cancel' => 'Trở về',
+    'failed' => 'Đang nhập không thành công',
 ];

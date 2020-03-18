@@ -13,10 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
+Route::group(['prefix' => 'admincp'], function () {
+    Route::resource('courses', 'CourseController');
 
-Route::get('/home', 'HomeController@index')->name('home');
+});
 
-Route::get('/logout', 'Auth\LoginController@logout');
+Route::get('/', 'Auth\LoginController@index')->name('indexLogin');
 
-Route::resource('courses', 'CourseController');
+Route::post('/login', 'Auth\LoginController@login')->name('login');
+
+Route::get('/home', 'Client\HomeController@index')->name('home');
+
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+
