@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "datatables.net": "^1.10.20",
-    "datatables.net-bs4": "^3.2.2"
+    "datatables.net-bs4": "^3.2.2",
+    "font-awesome": "^5.12.1"
   }
 }

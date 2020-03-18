@@ -23,5 +23,5 @@ mix.scripts([
 ], 'public/js/app.js');
 
 mix.js([
-    'resources/assets/js/table.js'
+    'resources/assets/js/table.js',
 ], 'public/js/all.js');
