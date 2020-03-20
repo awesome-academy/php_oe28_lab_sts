@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['prefix' => 'admincp'], function () {
+    Route::get('/', 'CourseController@index')->name('adminIndex');
+
     Route::resource('courses', 'CourseController');
 
 });

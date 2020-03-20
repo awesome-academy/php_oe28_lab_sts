@@ -7,18 +7,20 @@
             <a href="javascript:void(0);" id="mobile-menu-toggler">
                 <i class="ti-align-justify"></i>
             </a>
-            <ul class="navbar-nav">
-                <li>
-                    <img src="{{ asset('images/img_avatar.png') }}" alt="" class="avatar1">
-                </li>
-                <li class="has-menu-child current-menu-item">
-                    <a href="javascript:void(0);">Username</a>
-                    <ul class="sub-menu">
-                        <li><a href="#">{{__('Profile')}}</a></li>
-                        <li><a href="{{ route('logout') }}">{{__('Logout')}}</a></li>
-                    </ul>
-                </li>
-            </ul>
+            @auth
+                <ul class="navbar-nav">
+                    <li>
+                        <img src="{{ asset('images/img_avatar.png') }}" alt="" class="avatar1">
+                    </li>
+                    <li class="has-menu-child current-menu-item">
+                        <a href="javascript:void(0);">{{Auth::user()->fullname}}</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">{{__('Profile')}}</a></li>
+                            <li><a href="{{ route('logout') }}">{{__('Logout')}}</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            @endauth
         </nav>
     </div>
 </header>

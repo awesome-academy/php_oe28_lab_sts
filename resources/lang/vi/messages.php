@@ -35,8 +35,11 @@ return [
     'create_course' => 'Thêm khóa học',
     'name_course' => 'Tên khóa học',
     'cancel' => 'Trở về',
-    'failed' => 'Đang nhập không thành công',
+    'failed' => 'Đăng nhập không thành công, sai tài khoản hoặc mật khẩu',
     'status_inactive' => 'Chưa kích hoạt',
     'status_active' => 'Đang học',
     'status_done' => 'Kết thúc',
+    'save' => 'Lưu',
+    'edit_course' => 'Sửa khóa học'
+
 ];

@@ -69,8 +69,7 @@ class LoginController extends Controller
             }
             return redirect()->route('home');
         } else {
-
-            return redirect()->route('indexLogin');
+            return redirect()->route('indexLogin')->withErrors(['login.fail' => ['fail']]);
         }
     }
 
