@@ -19,7 +19,7 @@ class CheckRole
         if ($user->role_id == config('constant.role.user')) {
             return $next($request);
         } elseif ($user->role_id == config('constant.role.admin')) {
-            return redirect()->route('admin');
+            return redirect()->route('adminIndex');
         }
     }
 }
