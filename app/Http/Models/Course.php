@@ -14,4 +14,19 @@ class Course extends Model
         'creator_id',
         'time',
     ];
+
+    public function creator()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function subjects()
+    {
+        return $this->hasMany(Subject::class);
+    }
+
+    public function tasks()
+    {
+        return $this->hasManyThrough(Task::class, Subject::class);
+    }
 }
