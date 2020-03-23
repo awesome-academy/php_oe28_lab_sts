@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('bower_components/datatables.net-bs4/css/dataTables.bootstrap4.css') }}">
+    <link rel="stylesheet" href="{{ asset('bower_components/font-awesome/css/fontawesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('bower_components/font-awesome/css/brands.css') }}">
+    <link rel="stylesheet" href="{{ asset('bower_components/font-awesome/css/solid.css') }}">
 
     <title>@yield('title')</title>
 </head>

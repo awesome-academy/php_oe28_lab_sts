@@ -20,19 +20,27 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td><!-- /.example-class --></td>
-                        <td><!-- /.example-class --></td>
-                        <td><!-- /.example-class --></td>
-                        <td><!-- /.example-class --></td>
-                        <td><!-- /.example-class --></td>
-                        <td>
-                            <span class="badge badge-success"><!-- /.example-class --></span>
-                        </td>
-                        <td>
-                            <a href="#" class="btn btn-lg btn-success">{{ __('messages.view') }}</a>
-                        </td>
-                    </tr>
+                        @foreach ($user->courses as $key => $course)
+                            <tr>
+                                <td>{{ $key + 1 }}</td>
+                                <td>{{ $course->name }}</td>
+                                <td>{{ $course->pivot->start_time }}</td>
+                                <td>{{ $course->pivot->end_time }}</td>
+                                <td>
+                                    @if ($course->pivot->status == \App\Enums\StatusType::StatusInactive)
+                                        <span class="badge badge-warning">{{ __('messages.status_inactive') }}</span>
+                                    @elseif ($course->pivot->status == \App\Enums\StatusType::StatusActive)
+                                        <span class="badge badge-primary">{{ __('messages.status_active') }}</span>
+                                    @elseif ($course->pivot->status == \App\Enums\StatusType::StatusDone)
+                                        <span class="badge badge-success">{{ __('messages.status_done') }}</span>
+                                    @endif
+                                </td>
+                                <td>{{ $user->full_name }}</td>
+                                <td>
+                                    <a href="{{ route('courses.detail', $course->id) }}" class="btn btn-lg btn-success"><i class="fas fa-eye-slash"></i></a>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

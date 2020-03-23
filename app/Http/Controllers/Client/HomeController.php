@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers\Client;
 
+use App\Http\Models\Course;
+use App\Http\Models\Subject;
+use App\Http\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 
 class HomeController extends Controller
@@ -26,6 +30,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('client.index');
+        $user = Auth::user()->load('courses');
+
+        return view('client.index', compact('user'));
+    }
+
+    public function show($id)
+    {
+        $course = Course::find($id);
+        $subjects = $course->subjects->load('tasks');
+
+        return view('client.course-detail', compact(['course', 'subjects']));
     }
 }
