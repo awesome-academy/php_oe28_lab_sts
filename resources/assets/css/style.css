@@ -166,7 +166,8 @@ section {
     border: none;
     color: #fff;
     display: inline-block;
-    font-size: 13px;
+    width: 80px;
+    height: 40px;
     font-weight: 500;
     line-height: 0.8;
 }
@@ -3674,4 +3675,8 @@ section {
     .foo-top {
         padding-bottom: 20px;
     }
+}
+
+.border-input {
+    border: none;
 }
