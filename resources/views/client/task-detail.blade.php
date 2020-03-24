@@ -17,25 +17,30 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="course-content">
-                        <h3><!-- /.example-class --> <span class="badge"><!-- /.example-class --></span></h3>
-                        <p><!-- /.example-class --></p>
+                        <h3>{{ $task->title }}<span class="badge"><!-- /.example-class --></span></h3><br>
+                        <p>{{ $task->content }}</p>
                     </div>
 
                     <div class="comment-form">
                         <h4 class="comment-title">{{ __('messages.report') }}<span class="text-danger">*</span></h4>
-                        <form action="#">
-                            <textarea placeholder="Write Report"></textarea>
-                            <button class="btn btn-success btn-report" type="submit">{{ __('messages.sumbit') }}</button>
+                        <form action="{{ route('courses.report', $task->id) }}" method="post">
+                            @csrf
+                            <textarea name="report" placeholder="{{ __('messages.report') }}"></textarea>
+                            @if ($errors->first('report'))
+                                <span class="text-danger"> {{ $errors->first('report') }} </span>
+                            @endif
+                            <button class="btn btn-success btn-report" type="submit">{{ __('messages.submit') }}</button>
                         </form>
                     </div>
-
                 </div>
                 <div class="col-lg-4">
                     <aside class="sidebar">
                         <div class="widget categories">
-                            <h3 class="widget-title"><!-- /.example-class --></h3>
+                            <h3 class="widget-title">{{ $task->subject->title }}</h3>
                             <ul>
-                                <li><a href="#"><!-- /.example-class --></a>
+                                @foreach ($tasks as $task)
+                                    <li><a href="{{ route('courses.task', $task->id) }}">{{ $task->title }}</a>
+                                @endforeach
                             </ul>
                         </div>
                     </aside>

@@ -28,6 +28,8 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::group(['prefix' => 'courses', 'as' => 'courses.'], function () {
     Route::get('detail/{course}', 'Client\HomeController@show')->name('detail');
+    Route::get('task/{task}', 'Client\HomeController@showTask')->name('task');
+    Route::post('report/{task}', 'Client\HomeController@report')->name('report');
 });
 
 Route::resource('profile', 'Client\UserController');
