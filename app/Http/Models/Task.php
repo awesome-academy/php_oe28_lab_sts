@@ -12,4 +12,9 @@ class Task extends Model
         'content',
         'subject_id',
     ];
+
+    public function subject()
+    {
+        return $this->belongsTo(Subject::class);
+    }
 }

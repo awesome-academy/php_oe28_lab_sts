@@ -32,21 +32,18 @@
                                 @foreach ($subjects as $subject)
                                     <div class="accordion" id="accordion">
                                         <div class="accordion-item">
-                                            <h5 class="" data-toggle="collapse" data-target="#{{ $subject->title }}" aria-expanded="false">
+                                            <h5 class="" data-toggle="collapse" data-target="#acpan-{{ $subject->id }}" aria-expanded="false">
                                                 {{ $subject->title }}
                                                 <span><i class="fas fa-angle-down"></i></span>
                                             </h5>
-                                            <div id="{{ $subject->title }}" class="collapse" data-parent="#accordion">
+                                            <div id="acpan-{{ $subject->id }}" class="collapse" data-parent="#accordion">
                                                 <div class="acr-body">
                                                     <ul>
-                                                        <li>
-                                                            <a href="#"><i class="ti-control-play"></i>
-                                                                @foreach ($subject->tasks as $task)
-                                                                    {{ $task['title'] }}
-                                                                    <span class="badge badge-success"></span>
-                                                                @endforeach
-                                                            </a>
-                                                        </li>
+                                                        @foreach ($subject->tasks as $task)
+                                                            <li>
+                                                                <a href="{{ route('courses.task', $task->id) }}"><i class="fas fa-play"></i> {{ $task->title }}</a>
+                                                            </li>
+                                                        @endforeach
                                                     </ul>
                                                 </div>
                                             </div>
