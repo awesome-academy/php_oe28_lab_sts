@@ -39,4 +39,7 @@ return [
     'status_inactive' => 'Chưa kích hoạt',
     'status_active' => 'Đang học',
     'status_done' => 'Kết thúc',
+    'list_trainee' => 'Danh sách học viên',
+    'avatar' => 'Ảnh đại diện',
+    'full_name' => 'Tên hiển thị',
 ];

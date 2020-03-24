@@ -29,3 +29,5 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::group(['prefix' => 'courses', 'as' => 'courses.'], function () {
     Route::get('detail/{course}', 'Client\HomeController@show')->name('detail');
 });
+
+Route::resource('profile', 'Client\UserController');

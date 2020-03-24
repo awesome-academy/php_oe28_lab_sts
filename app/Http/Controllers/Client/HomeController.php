@@ -39,7 +39,8 @@ class HomeController extends Controller
     {
         $course = Course::find($id);
         $subjects = $course->subjects->load('tasks');
+        $users = $course->users;
 
-        return view('client.course-detail', compact(['course', 'subjects']));
+        return view('client.course-detail', compact(['course', 'subjects', 'users']));
     }
 }

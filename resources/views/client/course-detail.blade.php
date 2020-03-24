@@ -59,26 +59,21 @@
                 </div>
                 <div class="col-lg-4">
                     <aside class="sidebar">
-                        <div class="widget instractors">
-                            <figure>
-                                <a href="#" type="button" data-toggle="modal" data-target="#exampleModal">
-                                    <img src="{{ asset('images/img_avatar.png') }}" alt="" class="avatar-md circle">
-                                </a>
-                            </figure>
-                            <h4><!-- /.username --></h4>
-                            <span><!-- /.example-class --></span>
-                        </div>
                         <div class="widget categories">
-                            <h3 class="widget-title"><!-- /.list trainee --></h3>
-                            <ul>
-                                <li>
-                                    <a href="#" type="button" data-toggle="modal" data-target="#exampleModal">
-                                        <img src="{{ asset('images/img_avatar.png') }}" alt="" class="avatar1">
-                                        <p class="mt-3 ml-2"><!-- /.username --></p>
-                                    </a>
-                                </li>
-                                <a href="#">{{ __('messages.see_more') }}</a>
-                            </ul>
+                            <h3 class="widget-title">{{ __('messages.list_trainee') }}</h3>
+                                @foreach ($users as $user)
+                                    <ul>
+                                        <li>
+                                            <a href="#" type="button" data-toggle="modal" data-target="#profile"
+                                                data-user-avatar="{{ $user->avatar }}" data-user-name="{{ $user->full_name }}"
+                                                data-user-phone="{{ $user->phone }}" data-user-email="{{ $user->email }}">
+                                                <img src="{{ $user->avatar }}" alt="" class="avatar1">
+                                                <p class="mt-3 ml-2">{{ $user->full_name }}</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                @endforeach
+                            <a href="#">{{ __('messages.see_more') }}</a>
                         </div>
                     </aside>
                 </div>

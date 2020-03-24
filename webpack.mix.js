@@ -24,4 +24,5 @@ mix.scripts([
 
 mix.js([
     'resources/assets/js/table.js',
+    'resources/assets/js/modal.js',
 ], 'public/js/all.js');

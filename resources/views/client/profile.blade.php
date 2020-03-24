@@ -1,4 +1,4 @@
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="profile" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -8,27 +8,23 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="row justify-content-center">
-                    <div class="col-2">
-                        <img src="{{ asset('images/img_avatar.png') }}" alt="" class="avatar1">
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-3">
-                        <!-- /.username -->
-                    </div>
-                </div>
                 <div class="row">
                     <div class="col-12">
                         <table class="table table-borderless">
                             <tbody>
                             <tr>
+                                <th scope="row">
+                                    <img src="{{ asset('images/img_avatar.png') }}" alt="" class="avatar1">
+                                </th>
+                                <td><input id="name" class="border-input mt-3" readonly class="mt-4"></td>
+                            </tr>
+                            <tr>
                                 <th scope="row">{{ __('messages.email') }}</th>
-                                <td><!-- /.email --></td>
+                                <td><input id="email" class="border-input" readonly></td>
                             </tr>
                             <tr>
                                 <th scope="row">{{ __('messages.phone') }}</th>
-                                <td><!-- /.phone --></td>
+                                <td><input id="phone" class="border-input" readonly></td>
                             </tr>
                             </tbody>
                         </table>
