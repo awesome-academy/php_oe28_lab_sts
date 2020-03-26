@@ -11,4 +11,12 @@ return [
         'user' => 1,
     ],
 
+    /*
+    | Image
+    */
+
+    'image' => [
+        'null' => 0,
+    ],
+
 ];

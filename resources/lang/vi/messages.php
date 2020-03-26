@@ -42,4 +42,7 @@ return [
     'list_trainee' => 'Danh sách học viên',
     'avatar' => 'Ảnh đại diện',
     'full_name' => 'Tên hiển thị',
+    'save' => 'Lưu',
+    'edit_course' => 'Sửa khóa học'
+
 ];

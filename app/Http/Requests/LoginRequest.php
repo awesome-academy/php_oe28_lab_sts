@@ -34,7 +34,9 @@ class LoginRequest extends FormRequest
         return [
             'username' => 'Tài khoản hoặc mật khấu sai',
             'password' => 'Nhập mật khẩu',
-            'fail' => 'Đăng nhập không thành công',
+            'login.fail' => 'Sai Tài khoản hoăc mật khẩu',
+            'username.required' => 'Tài khoản không được để trống',
+            'password.required' => 'Mật khẩu không được để trống',
         ];
     }
 }

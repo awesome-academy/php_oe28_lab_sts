@@ -5,15 +5,16 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CourseRequest;
 use Illuminate\Http\Request;
 use App\Http\Models\Course;
+use Illuminate\Support\Facades\Auth;
 
 class CourseController extends Controller
 {
 
     public function index()
     {
-        $course = Course::all();
+        $courses = Course::where('creator_id', (Auth::user()->id))->get();
 
-        return $course;
+        return view('admin.index', compact('courses'));
     }
 
 
@@ -29,11 +30,11 @@ class CourseController extends Controller
             'name' => $request->name,
             'description' => $request->description,
             'image' => $request->image,
-            'creator_id' => $request->creator_id,
+            'creator_id' => Auth::user()->id,
             'time' => $request->time,
         ]);
 
-        return $course;
+        return view('admin.index');
     }
 
 
@@ -45,40 +46,33 @@ class CourseController extends Controller
 
     public function edit($id)
     {
-        //
+        $courses = Course::findOrFail($id);
+
+        return view('admin.courses.edit-form', compact('courses'));
     }
 
 
     public function update(CourseRequest $request, $id)
     {
-        $course = Course::find($id);
-        if ($course) {
-            $course = Course::find($id)
-                ->update([
-                    'name' => $request->name,
-                    'description' => $request->description,
-                    'image' => $request->image,
-                    'creator_id' => $request->creator_id,
-                    'time' => $request->time,
-                ]);
+        Course::findOrFail($id)
+            ->update([
+                'name' => $request->name,
+                'description' => $request->description,
+                'image' => config('constant.image.null'),
+                'creator_id' => Auth::user()->id,
+                'time' => $request->time,
+            ]);
 
-            return $course;
-        } else {
-
-            return null;
-        }
+        return redirect()->route('courses.index');
     }
 
 
     public function destroy($id)
     {
-        $course = Course::find($id);
-        if ($course) {
-            $course = Course::find($id)->delete();
+        Course::findOrFail($id)
+            ->delete();
 
-            return $course;
-        }
+        return redirect()->route('courses.index');
 
-        return null;
     }
 }
