@@ -11,7 +11,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
-
 class HomeController extends Controller
 {
     /**
@@ -32,14 +31,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user = Auth::user()->load('courses');
+        $user = Auth::user();
 
         return view('client.index', compact('user'));
     }
 
     public function show($id)
     {
-        $course = Course::find($id);
+        $course = Course::findOrFail($id);
         $subjects = $course->subjects->load('tasks');
         $users = $course->users;
 
@@ -48,7 +47,7 @@ class HomeController extends Controller
 
     public function showTask($id)
     {
-        $task = Task::find($id);
+        $task = Task::findOrFail($id);
         $tasks = Task::where('subject_id', $task->subject->id)->get();
 
         return view('client.task-detail', compact(['task', 'tasks']));
